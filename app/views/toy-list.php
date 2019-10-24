@@ -22,7 +22,7 @@
         <li>
             <!--
                 Ecriture de l'url du lien en conservant les GET potentiellement présents
-                Lors de l'utilisation du bouton tri on repasse à la première page
+                Lors de l'utilisation du bouton tri on passe sur la première page
             -->
             <a href="<?php _uri('jouets?order=ASC');
                         if( isset( $_GET[ 'brand_id' ] ) ) {
