@@ -1,0 +1,218 @@
+/* Variables */
+
+:root {
+    --black: #000;
+    --blue: #0056af;
+    --blue-light: #b1d9f3;
+    --gray: #808080;
+    --white: #fff;
+}
+
+/* Reset */
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 14px;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Eléments de base */
+h1 {
+    font-size: 30px;
+    font-weight: 700;
+    padding: 39px 0 19px 0;
+    text-align: center;
+}
+
+select,
+button {
+    border: 1px solid var( --gray );
+}
+
+button {
+    padding: 2px;
+}
+
+/* Classes de base */
+.bold-blue {
+    color: var( --blue );
+    font-weight: 700;
+}
+
+.grow-item {
+    flex-grow: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+.hidden-sort {
+    color: transparent;
+    padding: 8px;
+}
+
+.inner-margin-initial p {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+}
+
+.padding-bottom-light {
+    padding-bottom: 5px;
+}
+
+.tall-bold {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.tallest {
+    font-size: 30px;
+}
+
+.tall-extra {
+    font-size: 48px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Image de fond */
+.background {
+    position: relative;
+    z-index: 1;
+}
+
+    .background img {
+        display: block;
+        width: 100%;
+    }
+
+/* Logo */
+.logo {
+    padding: 22px 0 13px 10px;
+}
+
+/* Containeur centré */
+.container {
+    left: 25%;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    width: 50%;
+    z-index: 1;
+}
+
+/* Menu Nav */
+.menu-nav {
+    background-color: var( --blue );
+    display: flex;
+}
+
+    .menu-nav .btn:first-child{
+        border-left: none;
+    }
+
+    .menu-nav li {
+        position: relative;
+        z-index: 1;
+    }
+
+    .menu-nav ul {
+        background: var( --blue-light );
+        display: none;
+        font-size: 12px;
+        left: 0;
+        min-width: 100%;
+        position: absolute;
+        top: 100%;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+        .menu-nav ul li {
+            color: var( --black );
+            padding: 7px 13px;
+        }
+
+            .menu-nav ul li:last-child {
+                padding-bottom: 13px;
+            }
+
+    .menu-nav .sub-menu:hover {
+        background: var( --blue-light );
+        color: var( --blue );
+        border-left: none;
+    }
+
+        .menu-nav .sub-menu:hover ul {
+            display: block;
+        }
+
+/* Menu Tri */
+.menu-sort {
+    display: flex;
+}
+
+/* Boutons */
+.btn {
+    border-left: dashed;
+    border-color: var( --white );
+    font-weight: 700;
+    padding: 13px;
+    color: var( --white );
+}
+
+.btn-sort {
+    padding: 8px;
+}
+
+    .btn-sort:hover {
+       color: var( --blue );
+    }
+
+/* Mozaique */
+.mosaic {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-top: 65px;
+}
+
+    .mosaic > li {
+        flex-basis: 220px;
+        padding-bottom: 48px;
+    }
+
+    .mosaic > li a {
+        display: block;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        height: 100%;
+    }
+
+/* Détails jouets */
+.toy-info {
+    display: flex;
+}
+
+    .toy-info div {
+        padding: 13px;
+    }
+
+        .toy-info div .padding-left {
+             padding-left: 26px;
+         }
