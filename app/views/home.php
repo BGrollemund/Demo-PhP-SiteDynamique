@@ -12,8 +12,8 @@
                         <?php echo $toy['name']; ?>
                     </div>
                     <div class="grow-item"></div>
-                    <div>
-                        <p class="tallest"><?php echo replaceDotByComma( $toy['price'] ); ?> €</p>
+                    <div class="tallest line-height-30">
+                        <?php echo replaceDotByComma( $toy['price'] ); ?> €
                     </div>
                 </a>
             </li>

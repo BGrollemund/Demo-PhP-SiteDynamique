@@ -1,9 +1,9 @@
 /* Variables */
 
 :root {
-    --black: #000;
+    --black: #111;
     --blue: #0056af;
-    --blue-light: #b1d9f3;
+    --blue-light: #b9d2f3;
     --gray: #808080;
     --white: #fff;
 }
@@ -11,11 +11,9 @@
 /* Reset */
 * {
     box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
+    border: 0;
     margin: 0;
     padding: 0;
-    border: 0;
-    font-size: 14px;
 }
 
 ul {
@@ -28,10 +26,17 @@ a {
 }
 
 /* Eléments de base */
+body {
+    color: var( --black );
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
 h1 {
     font-size: 30px;
     font-weight: 700;
-    padding: 39px 0 19px 0;
+    line-height: 30px;
+    padding: 41px 0 17px 0;
     text-align: center;
 }
 
@@ -41,7 +46,7 @@ button {
 }
 
 button {
-    padding: 2px;
+    padding: 2px 5px;
 }
 
 /* Classes de base */
@@ -63,9 +68,19 @@ button {
     padding: 8px;
 }
 
-.inner-margin-initial p {
+.inner-text-style p:first-child {
+    font-size: 16px;
+}
+
+.inner-text-style p:not(:first-child) {
+    font-size: 16px;
+    line-height: 24px;
     margin-block-start: 1em;
     margin-block-end: 1em;
+}
+
+.line-height-30 {
+    line-height: 30px;
 }
 
 .padding-bottom-light {
@@ -144,11 +159,11 @@ button {
 
         .menu-nav ul li {
             color: var( --black );
-            padding: 7px 13px;
+            padding: 10px 32px 10px 15px;
         }
 
             .menu-nav ul li:last-child {
-                padding-bottom: 13px;
+                padding-bottom: 15px;
             }
 
     .menu-nav .sub-menu:hover {
@@ -171,7 +186,7 @@ button {
     border-left: dashed;
     border-color: var( --white );
     font-weight: 700;
-    padding: 13px;
+    padding: 15px 13px;
     color: var( --white );
 }
 
@@ -188,7 +203,7 @@ button {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    padding-top: 65px;
+    padding-top: 60px;
 }
 
     .mosaic > li {
@@ -196,13 +211,21 @@ button {
         padding-bottom: 48px;
     }
 
-    .mosaic > li a {
-        display: block;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        height: 100%;
-    }
+        .mosaic > li a {
+            display: block;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            height: 100%;
+        }
+
+        .mosaic > li div {
+            padding: 2px;
+        }
+
+        .mosaic > li .grow-item {
+            padding: 0;
+        }
 
 /* Détails jouets */
 .toy-info {

@@ -16,7 +16,7 @@
     <img src="<?php _uri('assets/img/logos/background.jpg'); ?>" alt="Image de fond du site">
 </div>
 
-<div class="container">
+<main class="container">
 
     <div class="logo">
         <img src="<?php _uri('assets/img/logos/logo.jpg'); ?>" alt="image du logo Toys'R'Us">

@@ -1,6 +1,6 @@
 <h1><?php echo $toy[ 'name' ]; ?></h1>
 
-<div class="toy-info">
+<div class="toy-info line-height-30">
     <div>
         <img src="<?php _uri( 'assets/img/toys/' . $toy['image'] ) ?>" alt="image de <?php echo $toy[ 'name' ]; ?>">
         <div class="tall-extra padding-left">
@@ -36,7 +36,7 @@
         </div>
     </div>
     <div>
-        <div class="inner-margin-initial">
+        <div class="inner-text-style">
             <p><span class="bold-blue">Marque: </span><span class="tall-bold"><?php echo $toy[ 'brand_name' ]; ?></span></p>
             <?php echo $toy[ 'description' ]; ?>
         </div>
