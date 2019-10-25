@@ -36,7 +36,7 @@ function routerStart(): void
     }
 
     // Pas de correspondance trouvée grâce au foreach:
-    // La route demandée n'est pas dans les routes enregisrtées, erreur 404
+    // La route demandée n'est pas dans les routes enregistrées, erreur 404
     if( empty( $current_route ) ) die404();
 
     // Si correspondance dans le foreach:

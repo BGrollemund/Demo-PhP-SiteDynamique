@@ -13,34 +13,35 @@
 <body>
 
 <div class="background">
-    <img src="<?php _uri('assets/img/logos/background.jpg'); ?>" alt="Image de fond du site">
+    <img src="<?php _uri('assets/img/logos/background.jpg'); ?>" alt="Image de fond du site Toys'R'Us">
 </div>
 
-<main class="container">
+<div class="container">
+    <header>
+        <div class="logo">
+            <img src="<?php _uri('assets/img/logos/logo.jpg'); ?>" alt="image du logo Toys'R'Us">
+        </div>
 
-    <div class="logo">
-        <img src="<?php _uri('assets/img/logos/logo.jpg'); ?>" alt="image du logo Toys'R'Us">
-    </div>
-    
-    <nav>
-        <ul class="menu-nav">
-            <li class="btn">
-                <a href="<?php _uri('jouets'); ?>">Tous les jouets</a>
-            </li>
-            <li class="btn sub-menu">
-                <a>Par marque &#9660;</a>
-                <ul>
-                    <?php
-                    foreach( $brands as $brand ) {
-                        echo '<li><a href="';
-                        _uri('jouets?brand_id=');
-                        echo $brand[ 'id' ] . '">' . $brand[ 'name' ] . ' (' . $brand[ 'toys_num' ] . ')</a></li>';
-                    }
-                    ?>
-                </ul>
-            </li>
-            <li class="btn grow-item"></li>
-        </ul>
-    </nav>
+        <nav>
+            <ul class="menu-nav">
+                <li class="btn">
+                    <a href="<?php _uri('jouets'); ?>">Tous les jouets</a>
+                </li>
+                <li class="btn sub-menu">
+                    <a>Par marque &#9660;</a>
+                    <ul>
+                        <?php
+                        foreach( $brands as $brand ) {
+                            echo '<li><a href="';
+                            _uri('jouets?brand_id=');
+                            echo $brand[ 'id' ] . '">' . $brand[ 'name' ] . ' (' . $brand[ 'toys_num' ] . ')</a></li>';
+                        }
+                        ?>
+                    </ul>
+                </li>
+                <li class="btn grow-item"></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>

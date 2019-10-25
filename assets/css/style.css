@@ -36,7 +36,7 @@ h1 {
     font-size: 30px;
     font-weight: 700;
     line-height: 30px;
-    padding: 41px 0 17px 0;
+    padding: 41px 0 18px 0;
     text-align: center;
 }
 
@@ -203,12 +203,12 @@ button {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    padding-top: 60px;
+    padding-top: 66px;
 }
 
     .mosaic > li {
         flex-basis: 220px;
-        padding-bottom: 48px;
+        padding: 26px;
     }
 
         .mosaic > li a {
@@ -226,6 +226,20 @@ button {
         .mosaic > li .grow-item {
             padding: 0;
         }
+
+/* Mozaique de la page liste */
+/*
+    Modification des padding de la mosaiques pour s'adapter à la pagination
+    On passe de 3 images par ligne à 2 car la pagination se fait pour 4 éléments
+
+.mosaic-list {
+    padding-top: 10px;
+}
+
+    .mosaic-list > li {
+        padding: 10px 60px;
+    }
+*/
 
 /* Détails jouets */
 .toy-info {

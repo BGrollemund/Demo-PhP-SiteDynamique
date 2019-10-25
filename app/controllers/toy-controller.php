@@ -71,23 +71,20 @@ function toyControllerShow( string $toy_id ): void
 
     if( empty( $toy ) ) die404();
 
-    // Conserve la valeur stock_total qui sera écrasée par la suite
-    $toy_total_all = $toy[ 'stock_total' ];
+    $toy[ 'stock_current' ] = $toy[ 'stock_total' ];
 
     if( isset( $_GET[ 'store_id' ] ) ) {
-        // On exclut le cas où $_GET[ 'store_id' ] est vide pour réaffecter $toy_total_all
-        // voir le second commentaire ci-dessous
+        // On exclut le cas où $_GET[ 'store_id' ] est vide
+        // valeur par défaut du formulaire, on affiche le stock_total
         if( ! ( is_numeric( $_GET[ 'store_id' ] ) || empty( $_GET[ 'store_id' ] ) ) ) die404();
 
         foreach( $toy[ 'store' ] as $store ) {
-            // Affectation du stock du magasin à stock_total pour affichage
-            if( $_GET[ 'store_id' ] === $store[ 'id' ] ) {
-                $toy[ 'stock_total' ] = $store[ 'quantity' ];
+            if( (int) $_GET[ 'store_id' ] === $store[ 'id' ] ) {
+                $toy[ 'stock_current' ] = $store[ 'quantity' ];
             }
-            // Réaffectation du stock_total conservé dans $toy_total_all en cas de resélection
-            // du select par défaut ou injection de données inexacte dans l'url
+
             if( empty( $_GET[ 'store_id' ] ) ) {
-                $toy[ 'stock_total' ] = $toy_total_all;
+                $toy[ 'stock_current' ] = $toy[ 'stock_total' ];
             }
         }
     }

@@ -20,7 +20,7 @@
                         -->
                         <?php foreach( $toy['store'] as $store ) {
                             echo '<option ';
-                            if( isset( $_GET[ 'store_id' ] ) && $_GET[ 'store_id' ]  === $store[ 'id' ] ) {
+                            if( isset( $_GET[ 'store_id' ] ) && (int) $_GET[ 'store_id' ]  === $store[ 'id' ] ) {
                                 echo 'selected="selected" ';
                             }
                             echo 'value="' . $store[ 'id' ] . '">';
@@ -32,7 +32,7 @@
                 </label>
                 <button type="submit">Ok</button>
             </form>
-            <p><span class="bold-blue">Stock: </span><span class="tall-bold"><?php echo $toy[ 'stock_total' ]; ?></span></p>
+            <p><span class="bold-blue">Stock: </span><span class="tall-bold"><?php echo $toy[ 'stock_current' ]; ?></span></p>
         </div>
     </div>
     <div>

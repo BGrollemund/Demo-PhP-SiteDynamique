@@ -17,7 +17,7 @@
     </form>
 </div>
 
-<nav>
+<div>
     <ul class="menu-sort">
         <li>
             <!--
@@ -111,10 +111,10 @@
             echo '</li>';
         } ?>
     </ul>
-</nav>
+</div>
 
 <?php if( ! empty($toys) ): ?>
-    <ul class="mosaic">
+    <ul class="mosaic mosaic-list">
         <?php foreach( $toys as $toy ): ?>
             <li>
                 <a href="<?php _uri('jouets?id=' . $toy[ 'id' ] ); ?>">

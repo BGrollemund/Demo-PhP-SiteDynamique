@@ -23,15 +23,16 @@ function toyModelGetAll( string $order = '', int $page = 1 ): array
         $q_all .= ' ORDER BY `price` ' . $order;
     }
 
-    $start_index = ( ( $page - 1 ) * ITEM_PER_PAGE );
-
     // Ajout pagination
-    $q_all .= ' LIMIT ' . $start_index . ', ' . ITEM_PER_PAGE;
+    $q_all .= ' LIMIT ?, ' . ITEM_PER_PAGE;
 
     $stmt_all = mysqli_prepare( $mysql, $q_all );
 
     if( ! $stmt_all ) return $arr_all;
 
+    $start_index = ( ( $page - 1 ) * ITEM_PER_PAGE );
+
+    mysqli_stmt_bind_param( $stmt_all, 'i', $start_index );
     mysqli_stmt_execute( $stmt_all );
 
     $r_all = mysqli_stmt_get_result( $stmt_all );
@@ -137,16 +138,16 @@ function toyModelGetByBrand( int $brand_id, string $order = '', int $page = 1 ):
             $q_by_brand .= ' ORDER BY `price` ' . $order;
     }
 
-    $start_index = ( ( $page - 1 ) * ITEM_PER_PAGE );
-
     // Ajout pagination
-    $q_by_brand .= ' LIMIT ' . $start_index . ', ' . ITEM_PER_PAGE;
+    $q_by_brand .= ' LIMIT ?, ' . ITEM_PER_PAGE;
 
     $stmt_by_brand = mysqli_prepare( $mysql, $q_by_brand );
 
     if( ! $stmt_by_brand ) return $arr_by_brand;
 
-    mysqli_stmt_bind_param( $stmt_by_brand, 'ii', $brand_id, $brand_id );
+    $start_index = ( ( $page - 1 ) * ITEM_PER_PAGE );
+
+    mysqli_stmt_bind_param( $stmt_by_brand, 'iii', $brand_id, $brand_id, $start_index );
     mysqli_stmt_execute( $stmt_by_brand );
 
     $r_by_brand = mysqli_stmt_get_result( $stmt_by_brand );
