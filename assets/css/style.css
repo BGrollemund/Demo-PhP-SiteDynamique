@@ -25,89 +25,160 @@ a {
     text-decoration: none;
 }
 
-@media ( min-width: 992px ) {
+/* Eléments de base */
+body {
+    color: var(--black);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
 
-    /* Eléments de base */
-    body {
-        color: var(--black);
-        font-family: 'Open Sans', sans-serif;
-        font-size: 14px;
-    }
+h1 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 36px;
+    padding: 41px 0 18px 0;
+    text-align: center;
+}
 
+select,
+button {
+    border: 1px solid var(--gray);
+}
+
+button {
+    padding: 2px 5px;
+}
+
+/* Classes de base */
+.bold-blue {
+    color: var(--blue);
+    font-weight: 700;
+}
+
+.grow-item {
+    flex-grow: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+.hidden-sort {
+    color: transparent;
+    padding: 8px;
+}
+
+.inner-text-style p:first-child {
+    font-size: 18px;
+}
+
+.inner-text-style p:not(:first-child) {
+    font-size: 18px;
+    line-height: 26px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+}
+
+.line-height-30 {
+    line-height: 36px;
+}
+
+.padding-bottom-light {
+    padding-bottom: 5px;
+}
+
+.tall-bold {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.tallest {
+    font-size: 36px;
+}
+
+.tall-extra {
+    font-size: 48px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Image de fond */
+.background {
+    display: none;
+}
+
+/* Menu Nav */
+.menu-nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu-nav .btn:last-child {
+    display: none;
+}
+
+/* Menu Tri */
+.menu-sort {
+    display: flex;
+}
+
+/* Logo */
+.logo {
+    padding: 22px 0 13px 10px;
+}
+
+/* Containeur centré */
+.container {
+    left: 10%;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    width: 80%;
+    z-index: 1;
+}
+
+/* Boutons */
+.btn {
+    background-color: var(--blue);
+    border-radius: 5px;
+    font-weight: 700;
+    flex-shrink: 0;
+    padding: 13px;
+    color: var(--white);
+    margin: 10px 0;
+}
+
+.btn-sort {
+    padding: 8px;
+}
+
+.btn-sort:hover {
+    color: var(--blue);
+}
+
+/* Détails jouets */
+.toy-info {
+    display: flex;
+}
+
+.toy-info div {
+    padding: 13px;
+}
+
+.toy-info div .padding-left {
+    padding-left: 26px;
+}
+
+@media ( min-width: 576px ) {
     h1 {
         font-size: 30px;
-        font-weight: 700;
-        line-height: 30px;
-        padding: 41px 0 18px 0;
-        text-align: center;
-    }
-
-    select,
-    button {
-        border: 1px solid var(--gray);
-    }
-
-    button {
-        padding: 2px 5px;
-    }
-
-    /* Classes de base */
-    .bold-blue {
-        color: var(--blue);
-        font-weight: 700;
-    }
-
-    .grow-item {
-        flex-grow: 1;
-    }
-
-    .hidden {
-        display: none;
-    }
-
-    .hidden-sort {
-        color: transparent;
-        padding: 8px;
-    }
-
-    .inner-text-style p:first-child {
-        font-size: 16px;
-    }
-
-    .inner-text-style p:not(:first-child) {
-        font-size: 16px;
-        line-height: 24px;
-        margin-block-start: 1em;
-        margin-block-end: 1em;
-    }
-
-    .line-height-30 {
         line-height: 30px;
     }
 
-    .padding-bottom-light {
-        padding-bottom: 5px;
-    }
-
-    .tall-bold {
-        font-size: 16px;
-        font-weight: 700;
-    }
-
-    .tallest {
-        font-size: 30px;
-    }
-
-    .tall-extra {
-        font-size: 48px;
-    }
-
-    .text-center {
-        text-align: center;
-    }
-
-    /* Image de fond */
     .background {
+        display: initial;
         position: relative;
         z-index: 1;
     }
@@ -117,25 +188,14 @@ a {
         width: 100%;
     }
 
-    /* Logo */
-    .logo {
-        padding: 22px 0 13px 10px;
-    }
-
-    /* Containeur centré */
     .container {
         left: 25%;
-        margin: auto;
-        position: absolute;
-        top: 0;
         width: 50%;
-        z-index: 1;
     }
 
-    /* Menu Nav */
     .menu-nav {
         background-color: var(--blue);
-        display: flex;
+        justify-content: initial;
     }
 
     .menu-nav .btn:first-child {
@@ -143,13 +203,14 @@ a {
     }
 
     .menu-nav li {
+        flex-grow: 1;
         position: relative;
+        text-align: center;
         z-index: 1;
     }
 
     .menu-nav ul {
         background: var(--blue-light);
-        display: none;
         font-size: 12px;
         left: 0;
         min-width: 100%;
@@ -162,6 +223,7 @@ a {
     .menu-nav ul li {
         color: var(--black);
         padding: 10px 32px 10px 15px;
+        text-align: initial;
     }
 
     .menu-nav ul li:last-child {
@@ -178,27 +240,54 @@ a {
         display: block;
     }
 
-    /* Menu Tri */
-    .menu-sort {
-        display: flex;
-    }
-
-    /* Boutons */
     .btn {
         border-left: dashed;
         border-color: var(--white);
-        font-weight: 700;
+        border-radius: 0;
         padding: 15px 13px;
-        color: var(--white);
+        margin: 0;
     }
 
-    .btn-sort {
-        padding: 8px;
+}
+
+@media ( min-width: 768px ) {
+    body {
+        font-size: 14px;
     }
 
-    .btn-sort:hover {
-        color: var(--blue);
+    .inner-text-style p:first-child {
+        font-size: 16px;
     }
+
+    .inner-text-style p:not(:first-child) {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .line-height-30 {
+        line-height: 30px;
+    }
+
+    .tall-bold {
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .tallest {
+        font-size: 30px;
+    }
+
+    .menu-nav .btn:last-child {
+        display: initial;
+    }
+
+    .menu-nav li {
+        flex-grow: initial;
+    }
+
+}
+
+@media ( min-width: 992px ) {
 
     /* Mozaique */
     .mosaic {
@@ -242,16 +331,4 @@ a {
             padding: 10px 60px;
         }
     */
-    /* Détails jouets */
-    .toy-info {
-        display: flex;
-    }
-
-    .toy-info div {
-        padding: 13px;
-    }
-
-    .toy-info div .padding-left {
-        padding-left: 26px;
-    }
 }
