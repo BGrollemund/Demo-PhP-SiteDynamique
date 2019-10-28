@@ -36,7 +36,7 @@ h1 {
     font-size: 36px;
     font-weight: 700;
     line-height: 36px;
-    padding: 41px 0 18px 0;
+    padding: 100px 0 18px 0;
     text-align: center;
 }
 
@@ -112,16 +112,49 @@ button {
 /* Menu Nav */
 .menu-nav {
     display: flex;
-    justify-content: space-around;
+}
+
+.menu-nav li {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+.menu-nav ul {
+    background: var(--blue-light);
+    border-radius: 5px;
+    font-size: 16px;
+    left: 130%;
+    min-width: 100%;
+    position: absolute;
+    top: -200%;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+.menu-nav ul li {
+    color: var(--black);
+    padding: 7px;
+    text-align: initial;
 }
 
 .menu-nav .btn:last-child {
     display: none;
 }
 
+#triangle-down,
+#triangle-left {
+    user-select: none;
+    cursor: pointer;
+}
+
 /* Menu Tri */
 .menu-sort {
     display: flex;
+}
+
+.menu-sort .tall-bold {
+    font-size: 14px;
 }
 
 /* Logo */
@@ -131,7 +164,7 @@ button {
 
 /* Containeur centré */
 .container {
-    left: 10%;
+    left: 3%;
     margin: auto;
     position: absolute;
     top: 0;
@@ -147,7 +180,7 @@ button {
     flex-shrink: 0;
     padding: 13px;
     color: var(--white);
-    margin: 10px 0;
+    margin: 10px 3px;
 }
 
 .btn-sort {
@@ -171,10 +204,45 @@ button {
     padding-left: 26px;
 }
 
+/* Mozaique */
+.mosaic {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-top: 66px;
+}
+
+.mosaic > li {
+    flex-basis: 220px;
+    padding: 26px;
+}
+
+.mosaic > li a {
+    display: block;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+}
+
+.mosaic > li div {
+    padding: 2px;
+}
+
+.mosaic > li .grow-item {
+    padding: 0;
+}
+
 @media ( min-width: 576px ) {
     h1 {
         font-size: 30px;
         line-height: 30px;
+        padding-top: 41px;
+    }
+
+    .logo {
+        padding: 22px 0 13px 10px;
     }
 
     .background {
@@ -210,40 +278,25 @@ button {
     }
 
     .menu-nav ul {
-        background: var(--blue-light);
+        border-radius: 0;
         font-size: 12px;
         left: 0;
         min-width: 100%;
-        position: absolute;
         top: 100%;
-        white-space: nowrap;
-        z-index: 1;
     }
 
     .menu-nav ul li {
-        color: var(--black);
         padding: 10px 32px 10px 15px;
-        text-align: initial;
     }
 
     .menu-nav ul li:last-child {
         padding-bottom: 15px;
     }
 
-    .menu-nav .sub-menu:hover {
-        background: var(--blue-light);
-        color: var(--blue);
-        border-left: none;
-    }
-
-    .menu-nav .sub-menu:hover ul {
-        display: block;
-    }
-
     .btn {
         border-left: dashed;
         border-color: var(--white);
-        border-radius: 0;
+        border-radius: 0px;
         padding: 15px 13px;
         margin: 0;
     }
@@ -285,50 +338,31 @@ button {
         flex-grow: initial;
     }
 
+    .menu-sort .tall-bold {
+        font-size: 18px;
+    }
+
 }
 
 @media ( min-width: 992px ) {
 
+    .menu-nav .sub-menu:hover {
+        background: var(--blue-light);
+        color: var(--blue);
+        border-left: none;
+    }
+
+    .menu-nav .sub-menu:hover ul {
+        display: block;
+    }
+
     /* Mozaique */
     .mosaic {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        padding-top: 66px;
+        flex-direction: row;
     }
 
-    .mosaic > li {
-        flex-basis: 220px;
-        padding: 26px;
-    }
+}
 
-    .mosaic > li a {
-        display: block;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        height: 100%;
-    }
+@media ( min-width: 1200px ) {
 
-    .mosaic > li div {
-        padding: 2px;
-    }
-
-    .mosaic > li .grow-item {
-        padding: 0;
-    }
-
-    /* Mozaique de la page liste */
-    /*
-        Modification des padding de la mosaiques pour s'adapter à la pagination
-        On passe de 3 images par ligne à 2 car la pagination se fait pour 4 éléments
-
-    .mosaic-list {
-        padding-top: 10px;
-    }
-
-        .mosaic-list > li {
-            padding: 10px 60px;
-        }
-    */
 }

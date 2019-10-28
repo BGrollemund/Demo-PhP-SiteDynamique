@@ -28,7 +28,8 @@
                     <a href="<?php _uri('jouets'); ?>">Tous les jouets</a>
                 </li>
                 <li id="open-menu" class="btn sub-menu">
-                    <a>Par marque &#9660;</a>
+                    <span id="triangle-down">Par marque &#9660;</span>
+                    <span id="triangle-left" class="hidden">&#9668;</span>
                     <ul id="hidden-menu" class="hidden">
                         <?php
                         foreach( $brands as $brand ) {
